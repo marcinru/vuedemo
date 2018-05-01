@@ -5,21 +5,46 @@
     <title>Vue.js demo</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
       integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div id="app" class="container" style="padding-top:2em;">
+    <div id="app" class="container">
       <h5>New case for creditor {{creditorNumber}}</h5>
-      <table class="table">
-        <thead class="thead-dark">
+      <table class="table table-sm table-bordered">
+        <thead class="thead-light">
           <tr>
-            <th>1</th>
-            <th>2</th>
+            <th>inv. number</th>
+            <th>inv. text</th>
+            <th>inv. date</th>
+            <th>due date</th>
+            <th>currency</th>
+            <th>inv. amt.</th>
+            <th>attachment</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
-            <td>2</td>
+            <td><input type="text" class="form-control"></td>
+            <td><input type="text" class="form-control"></td>
+            <td><input type="text" class="form-control"></td>
+            <td><input type="text" class="form-control"></td>
+            <td>
+              <select class="form-control">
+                <option value="NOK" selected>NOK</option>
+                <option value="EUR" selected>EUR</option>
+              </select>
+            </td>
+            <td><input type="text" class="form-control"></td>
+            <td></td>
+          </tr>
+          <tr v-for="invoice in invoices">
+            <td><input type="text" class="form-control" v-model="invoice.number"></td>
+            <td>{{invoice.text}}</td>
+            <td>{{invoice.date}}</td>
+            <td>{{invoice.duedate}}</td>
+            <td>{{invoice.currency}}</td>
+            <td>{{invoice.amount}}</td>
+            <td>{{invoice.attachment}}</td>
           </tr>
         </tbody>
       </table>

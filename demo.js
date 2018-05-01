@@ -1,6 +1,7 @@
 new Vue({
     el: '#app',
     data: {
-        creditorNumber: 123456
+        creditorNumber: 123456,
+        invoices: []
     }
 })
