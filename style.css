@@ -1,7 +1,24 @@
+[v-cloak] {
+    display: none;
+}
+
 .container {
     padding-top: 2em;
 }
 
 .table {
     table-layout: fixed;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.table .fas {
+    color: #007bff;
+}
+
+.table .fas:hover {
+    color: #0056b3;
+    cursor: pointer;
 }
