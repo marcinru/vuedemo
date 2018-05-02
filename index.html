@@ -33,7 +33,7 @@
             <td>
               <select class="form-control">
                 <option value="NOK" selected>NOK</option>
-                <option value="EUR" selected>EUR</option>
+                <option value="EUR">EUR</option>
               </select>
             </td>
             <td><input type="text" class="form-control"></td>
@@ -44,8 +44,13 @@
             <td>{{invoice.text}}</td>
             <td>{{invoice.date}}</td>
             <td>{{invoice.duedate}}</td>
-            <td>{{invoice.currency}}</td>
-            <td>{{invoice.amount}}</td>
+            <td>
+                <select v-model="invoice.currency" class="form-control">
+                    <option value="NOK" selected>NOK</option>
+                    <option value="EUR">EUR</option>
+                  </select>
+             </td>
+             <td>{{invoice.amount}}</td>
             <td>{{invoice.attachment}}</td>
           </tr>
         </tbody>

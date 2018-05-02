@@ -11,7 +11,7 @@ new Vue({
                 text: 'description',
                 date: '2018-05-02',
                 duedate: '2018-05-22',
-                currency: 'EUR',
+                currency: 'NOK',
                 amount: 123.45,
                 attachment: ''
             })
