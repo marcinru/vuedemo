@@ -51,7 +51,7 @@
         </tbody>
       </table>
       <button @click="addInvoice" class="btn btn-primary">Add invoice</button>
-      <button class="btn btn-danger">Delete invoice</button>
+      <button @click="deleteInvoice" class="btn btn-danger">Delete invoice</button>
       <hr>
       <h5>Data that will be send to server</h5>
       {{invoices}}

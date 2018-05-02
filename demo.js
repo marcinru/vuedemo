@@ -15,6 +15,9 @@ new Vue({
                 amount: 123.45,
                 attachment: ''
             })
+        },
+        deleteInvoice() {
+            this.invoices.pop()
         }
     }
 })
