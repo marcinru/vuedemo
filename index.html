@@ -25,20 +25,6 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><input type="text" class="form-control"></td>
-            <td><input type="text" class="form-control"></td>
-            <td><input type="text" class="form-control"></td>
-            <td><input type="text" class="form-control"></td>
-            <td>
-              <select class="form-control">
-                <option value="NOK" selected>NOK</option>
-                <option value="EUR">EUR</option>
-              </select>
-            </td>
-            <td><input type="text" class="form-control"></td>
-            <td><i class="fas fa-paperclip fa-lg"></i></td>
-          </tr>
           <tr v-for="invoice in invoices" v-cloak>
             <td><input type="text" class="form-control" v-model="invoice.number"></td>
             <td>{{invoice.text}}</td>
@@ -52,6 +38,20 @@
              </td>
              <td>{{invoice.amount}}</td>
             <td>{{invoice.attachment}}</td>
+          </tr>
+          <tr>
+            <td><input type="text" class="form-control"></td>
+            <td><input type="text" class="form-control"></td>
+            <td><input type="text" class="form-control"></td>
+            <td><input type="text" class="form-control"></td>
+            <td>
+              <select class="form-control">
+                <option value="NOK" selected>NOK</option>
+                <option value="EUR">EUR</option>
+              </select>
+            </td>
+            <td><input type="text" class="form-control"></td>
+            <td><i class="fas fa-paperclip fa-lg"></i></td>
           </tr>
         </tbody>
       </table>
