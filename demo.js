@@ -21,13 +21,21 @@ new Vue({
                 currency: this.currency,
                 amount: this.amount,
                 attachment: this.attachment
-            })
+            });
+            this.resetForm();
         },
         deleteInvoice() {
             this.invoices.pop()
         },
         resetForm() {
-            //
+            this.creditorNumber = '';
+            this.number = '';
+            this.text = '';
+            this.date = '';
+            this.duedate = '';
+            this.currency = 'NOK';
+            this.amount = 0;
+            this.attachment = '';
         }
     }
 })
