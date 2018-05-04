@@ -22,3 +22,7 @@
     color: #0056b3;
     cursor: pointer;
 }
+
+.table .fas.text-danger:hover {
+    color: #c82333 !important;
+}
