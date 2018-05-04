@@ -38,9 +38,9 @@
             </td>
             <td><input type="number" class="form-control" v-model="invoice.amount"></td>
             <td>
-              <i class="fas fa-paperclip fa-lg"></i>
-              <i class="far fa-file-alt fa-lg"></i>
-              <i class="fas fa-trash-alt fa-lg text-danger"></i>
+              <i v-if="!invoice.attachment" class="fas fa-paperclip fa-lg"></i>
+              <i v-if="invoice.attachment" class="far fa-file-alt fa-lg" :title="invoice.attachment"></i>
+              <i v-if="invoice.attachment" class="fas fa-trash-alt fa-lg text-danger"></i>
             </td>
           </tr>
           <tr>

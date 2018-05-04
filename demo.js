@@ -11,11 +11,6 @@ new Vue({
         attachment: '',
         invoices: []
     },
-    computed: {
-        hasAttachment: function() {
-            return this.attachment.length > 0
-        }
-    },
     methods: {
         addInvoice() {
             this.invoices.push({
