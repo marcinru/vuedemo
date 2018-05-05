@@ -17,6 +17,15 @@ new Vue({
         invoices: [],
         id: 0
     },
+    computed: {
+        total: function() {
+            if (this.invoices.length == 0) {
+                return 0;
+            } else {
+                return this.invoices.reduce((s, i) => s + +i.amount, 0)
+            }
+        }
+    },
     methods: {
         addInvoice() {
             this.invoices.push({
