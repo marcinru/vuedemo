@@ -1,7 +1,7 @@
 new Vue({
     el: '#app',
     data: {
-        creditorNumber: '',
+        creditorNumber: 123456,
         number: '',
         text: '',
         date: '',
@@ -46,8 +46,10 @@ new Vue({
         resetInput() {
             document.getElementById('attachment').value = ''
         },
+        resetFileInput() {
+            document.getElementById('invoiceAttachment').value = ''
+        },
         resetForm() {
-            this.creditorNumber = '';
             this.number = '';
             this.text = '';
             this.date = '';
