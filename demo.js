@@ -28,7 +28,10 @@ new Vue({
             this.invoices.pop()
         },
         attachFile() {
-            this.attachment = 'foo'
+            var files = document.getElementById('attachment').files
+            if (files.length > 0) {
+                this.attachment = files[0].name
+            }
         },
         resetInput() {
             document.getElementById('attachment').value = ''
