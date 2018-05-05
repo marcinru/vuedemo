@@ -33,6 +33,9 @@ new Vue({
                 this.attachment = files[0].name
             }
         },
+        deleteFile() {
+            this.attachment = ''
+        },
         resetInput() {
             document.getElementById('attachment').value = ''
         },

@@ -41,7 +41,8 @@
             <td>
               <i v-if="!invoice.attachment" class="fas fa-paperclip fa-lg" v-b-modal.attachments></i>
               <i v-if="invoice.attachment" class="far fa-file-alt fa-lg" :title="invoice.attachment"></i>
-              <i v-if="invoice.attachment" class="fas fa-trash-alt fa-lg text-danger"></i>
+              <i v-if="invoice.attachment" class="fas fa-trash-alt fa-lg text-danger"
+                @click="invoice.attachment = ''"></i>
             </td>
           </tr>
           <tr>
@@ -57,9 +58,9 @@
             </td>
             <td><input type="number" class="form-control" v-model="amount"></td>
             <td>
-              <i class="fas fa-paperclip fa-lg" v-b-modal.attachments></i>
-              <i class="far fa-file-alt fa-lg"></i>
-              <i class="fas fa-trash-alt fa-lg text-danger"></i>
+              <i v-if="!attachment" class="fas fa-paperclip fa-lg" v-b-modal.attachments></i>
+              <i v-if="attachment" class="far fa-file-alt fa-lg" :title="attachment"></i>
+              <i v-if="attachment" class="fas fa-trash-alt fa-lg text-danger" @click="deleteFile"></i>
             </td>
           </tr>
         </tbody>
