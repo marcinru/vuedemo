@@ -1,11 +1,16 @@
+var date = new Date()
+var today = date.toLocaleDateString('nb-NO')
+date.setDate(date.getDate() + 14)
+var inTwoWeeks = date.toLocaleDateString('nb-NO')
+
 new Vue({
     el: '#app',
     data: {
         creditorNumber: 123456,
         number: '',
         text: '',
-        date: '',
-        duedate: '',
+        date: today,
+        duedate: inTwoWeeks,
         currency: 'NOK',
         amount: 0,
         attachment: '',
@@ -52,8 +57,8 @@ new Vue({
         resetForm() {
             this.number = '';
             this.text = '';
-            this.date = '';
-            this.duedate = '';
+            this.date = today;
+            this.duedate = inTwoWeeks;
             this.currency = 'NOK';
             this.amount = 0;
             this.attachment = '';
