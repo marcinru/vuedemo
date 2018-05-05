@@ -9,7 +9,8 @@ new Vue({
         currency: 'NOK',
         amount: 0,
         attachment: '',
-        invoices: []
+        invoices: [],
+        id: 0
     },
     methods: {
         addInvoice() {
@@ -31,6 +32,12 @@ new Vue({
             var files = document.getElementById('attachment').files
             if (files.length > 0) {
                 this.attachment = files[0].name
+            }
+        },
+        attachFileToInvoice() {
+            var files = document.getElementById('invoiceAttachment').files
+            if (files.length > 0) {
+                this.invoices[this.id].attachment = files[0].name
             }
         },
         deleteFile() {

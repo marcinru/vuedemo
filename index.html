@@ -26,7 +26,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="invoice in invoices" v-cloak>
+          <tr v-for="(invoice, index) in invoices" v-cloak>
             <td><input type="text" class="form-control" v-model="invoice.number"></td>
             <td><input type="text" class="form-control" v-model="invoice.text"></td>
             <td><input type="text" class="form-control" v-model="invoice.date"></td>
@@ -39,7 +39,8 @@
             </td>
             <td><input type="number" class="form-control" v-model="invoice.amount"></td>
             <td>
-              <i v-if="!invoice.attachment" class="fas fa-paperclip fa-lg" v-b-modal.attachments></i>
+              <i v-if="!invoice.attachment" class="fas fa-paperclip fa-lg"
+                v-b-modal.invoiceattachments @click="id = index"></i>
               <i v-if="invoice.attachment" class="far fa-file-alt fa-lg" :title="invoice.attachment"></i>
               <i v-if="invoice.attachment" class="fas fa-trash-alt fa-lg text-danger"
                 @click="invoice.attachment = ''"></i>
@@ -72,6 +73,10 @@
       {{invoices}}
       <b-modal id="attachments" title="Attach file to invoice" @ok="attachFile" @hide="resetInput">
         <input type="file" name="attachment" id="attachment">
+      </b-modal>
+      <b-modal id="invoiceattachments" title="Attach file to invoice"
+          @ok="attachFileToInvoice">
+        <input type="file" name="attachment" id="invoiceAttachment">
       </b-modal>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
