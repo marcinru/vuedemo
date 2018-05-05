@@ -27,6 +27,12 @@ new Vue({
         deleteInvoice() {
             this.invoices.pop()
         },
+        attachFile() {
+            this.attachment = 'foo'
+        },
+        resetInput() {
+            document.getElementById('attachment').value = ''
+        },
         resetForm() {
             this.creditorNumber = '';
             this.number = '';

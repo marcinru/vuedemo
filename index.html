@@ -69,8 +69,8 @@
       <hr>
       <h5>Data that will be send to server</h5>
       {{invoices}}
-      <b-modal id="attachments" title="Attach file to invoice">
-        <input type="file" name="attachment">
+      <b-modal id="attachments" title="Attach file to invoice" @ok="attachFile" @hide="resetInput">
+        <input type="file" name="attachment" id="attachment">
       </b-modal>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
