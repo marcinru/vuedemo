@@ -39,7 +39,7 @@
             </td>
             <td><input type="number" class="form-control" v-model="invoice.amount"></td>
             <td>
-              <i v-if="!invoice.attachment" class="fas fa-paperclip fa-lg"></i>
+              <i v-if="!invoice.attachment" class="fas fa-paperclip fa-lg" v-b-modal.attachments></i>
               <i v-if="invoice.attachment" class="far fa-file-alt fa-lg" :title="invoice.attachment"></i>
               <i v-if="invoice.attachment" class="fas fa-trash-alt fa-lg text-danger"></i>
             </td>
@@ -57,7 +57,7 @@
             </td>
             <td><input type="number" class="form-control" v-model="amount"></td>
             <td>
-              <i v-b-modal.modal1 class="fas fa-paperclip fa-lg"></i>
+              <i class="fas fa-paperclip fa-lg" v-b-modal.attachments></i>
               <i class="far fa-file-alt fa-lg"></i>
               <i class="fas fa-trash-alt fa-lg text-danger"></i>
             </td>
@@ -69,8 +69,8 @@
       <hr>
       <h5>Data that will be send to server</h5>
       {{invoices}}
-      <b-modal id="modal1" title="Bootstrap-Vue">
-        <p class="my-4">Hello from modal!</p>
+      <b-modal id="attachments" title="Attach file to invoice">
+        <input type="file" name="attachment">
       </b-modal>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
