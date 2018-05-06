@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML template</title>
+</head>
+<body>
+  <div id="app" class="container">
+    <h5>New case for creditor <span></span></h5>
+    <table class="table table-sm table-bordered">
+      <thead class="thead-light">
+        <tr>
+          <th>inv. number</th>
+          <th>inv. text</th>
+          <th>inv. date</th>
+          <th>due date</th>
+          <th>currency</th>
+          <th>inv. amt.</th>
+          <th>attachment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" class="form-control"></td>
+          <td><input type="text" class="form-control"></td>
+          <td><input type="text" class="form-control"></td>
+          <td><input type="text" class="form-control"></td>
+          <td>
+            <select class="form-control">
+              <option value="NOK" selected>NOK</option>
+              <option value="EUR">EUR</option>
+            </select>
+          </td>
+          <td><input type="number" step="100" class="form-control"></td>
+          <td>
+            <i class="fas fa-paperclip fa-lg"></i>
+            <i class="far fa-file-alt fa-lg"></i>
+            <i class="fas fa-trash-alt fa-lg text-danger"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <label class="float-right">Total invoice amount: <b>0</b></label>
+    <button class="btn btn-primary">Add invoice</button>
+    <button class="btn btn-danger">Delete invoice</button>
+    <hr>
+    <h5>Data that will be send to server</h5>
+    <div>[]</div>
+  </div>
+</body>
+</html>

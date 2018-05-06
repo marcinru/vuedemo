@@ -12,7 +12,7 @@
   </head>
   <body>
     <div id="app" class="container">
-      <h5>New case for creditor {{creditorNumber}}</h5>
+      <h5>New case for creditor <span v-cloak>{{creditorNumber}}</span></h5>
       <table class="table table-sm table-bordered">
         <thead class="thead-light">
           <tr>
@@ -37,7 +37,7 @@
                     <option value="EUR">EUR</option>
                 </select>
             </td>
-            <td><input type="number" class="form-control" v-model="invoice.amount"></td>
+            <td><input type="number" step="100" class="form-control" v-model="invoice.amount"></td>
             <td>
               <i v-if="!invoice.attachment" class="fas fa-paperclip fa-lg"
                 v-b-modal.invoiceattachments @click="id = index"></i>
@@ -57,7 +57,7 @@
                 <option value="EUR">EUR</option>
               </select>
             </td>
-            <td><input type="number" class="form-control" v-model="amount"></td>
+            <td><input type="number" step="100" class="form-control" v-model="amount"></td>
             <td>
               <i v-if="!attachment" class="fas fa-paperclip fa-lg" v-b-modal.attachments></i>
               <i v-if="attachment" class="far fa-file-alt fa-lg" :title="attachment"></i>
@@ -66,18 +66,18 @@
           </tr>
         </tbody>
       </table>
-      <strong class="float-right">Total invoice amount: {{ total }}</strong>
+      <label class="float-right">Total invoice amount: <b v-cloak>{{total}}</b></label>
       <button v-on:click="addInvoice" class="btn btn-primary">Add invoice</button>
       <button @click="deleteInvoice" class="btn btn-danger">Delete invoice</button>
       <hr>
       <h5>Data that will be send to server</h5>
-      {{invoices}}
+      <div v-cloak>{{invoices}}</div>
       <b-modal id="attachments" title="Attach file to invoice" @ok="attachFile" @hide="resetInput">
-        <input type="file" name="attachment" id="attachment">
+        <input v-cloak type="file" name="attachment" id="attachment">
       </b-modal>
       <b-modal id="invoiceattachments" title="Attach file to invoice"
           @ok="attachFileToInvoice" @hide="resetFileInput">
-        <input type="file" name="attachment" id="invoiceAttachment">
+        <input v-cloak type="file" name="attachment" id="invoiceAttachment">
       </b-modal>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
